@@ -1,14 +1,10 @@
 import axios from 'axios';
 
-export const privateApi = axios.create({
-  baseURL: process.env.PRIVATE_API_BASE_URL,
+const configAxios = {
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-});
-export const publicApi = axios.create({
-  baseURL: process.env.PUBLIC_API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+};
+export const privateApi = axios.create({ ...configAxios });
+export const publicApi = axios.create({ ...configAxios, withCredentials: true });
