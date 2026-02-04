@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="col-span-1 sm:col-span-2 lg:col-span-4">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <img src="/fcode.png" alt="F-Code" className="h-9 w-9" />
+                <img src="/images/fcode.png" alt="F-Code" className="h-9 w-9" />
                 <div className="bg-primary/20 absolute inset-0 rounded-full opacity-50 blur-lg"></div>
               </div>
               <span className="text-primary text-2xl font-bold tracking-tight">F-Code</span>
