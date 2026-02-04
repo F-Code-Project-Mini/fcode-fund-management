@@ -1,6 +1,12 @@
+import './assets/styles/index.css';
+import { AppProvider } from './providers/AppProvider';
+import AppRouter from './routes';
 const App = () => {
-  const url = import.meta.env.VITE_BASE_URL;
-  return <div>Xin chao anh em {url}</div>;
+  return (
+    <AppProvider>
+      <AppRouter />
+    </AppProvider>
+  );
 };
 
 export default App;

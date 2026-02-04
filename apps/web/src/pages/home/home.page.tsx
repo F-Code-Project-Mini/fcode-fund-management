@@ -1,7 +1,7 @@
 const HomePage = () => {
   console.log(import.meta.env?.BUN_PUBLIC_API_URL);
 
-  return <div>Xin chao anh em nhe</div>;
+  return <b>Demo Hệ thống</b>;
 };
 
 export default HomePage;
