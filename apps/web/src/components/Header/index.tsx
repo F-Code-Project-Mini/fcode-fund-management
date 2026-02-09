@@ -1,9 +1,10 @@
-import { House } from 'lucide-react';
-import { Link } from 'react-router';
+import { BadgeEuro, House } from 'lucide-react';
+import { Link, useLocation } from 'react-router';
 import ActiveHeader from '../../utils/active-header';
 import { NavLink } from './NavLink';
 
 export const Header = () => {
+  const location = useLocation();
   return (
     <header className="sticky top-3 z-50 mt-6 rounded-lg border border-gray-200/60 bg-white/95 px-5 py-3.5 backdrop-blur-xl transition-all md:px-7">
       <div className="mx-auto flex max-w-7xl items-center">
@@ -23,6 +24,15 @@ export const Header = () => {
           <ul className="flex items-center gap-2">
             <li>
               <NavLink url="/" name="Trang chủ" Icon={House} active={ActiveHeader.isActive(location.pathname, '/')} />
+            </li>
+
+            <li>
+              <NavLink
+                url="/history-transactions"
+                name="Giao dịch"
+                Icon={BadgeEuro}
+                active={ActiveHeader.isActive(location.pathname, '/history-transactions')}
+              />
             </li>
 
             {/* {isLogin && (
