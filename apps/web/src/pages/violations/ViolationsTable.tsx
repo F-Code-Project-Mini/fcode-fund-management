@@ -102,7 +102,7 @@ const ViolationsTable = () => {
   };
 
   return (
-    <div className="bg-base-100 shadow-sm rounded-lg">
+    <div className="bg-base-100 shadow-xs rounded-lg">
       <div className="p-4 border-b">
         <div className="flex justify-between items-center">
           <h3 className="text-base font-semibold">Danh sách vi phạm</h3>

@@ -1,30 +1,27 @@
+import { Plus, X } from 'lucide-react';
+import { useRef } from 'react';
+
 const AddViolationModal = () => {
+  const modal = useRef(null);
+  const openModal = () => {
+    modal.current?.showModal();
+  };
+  const closeModal = () => {
+    modal.current?.close();
+  };
   return (
     <>
-      <button
-        className="btn btn-primary"
-        onClick={() => {
-          const modal = document.getElementById('add_violation_modal') as HTMLDialogElement;
-          modal?.showModal();
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-        </svg>
+      <button className="btn btn-primary" onClick={openModal}>
+        <Plus size={18} />
         Thêm vi phạm
       </button>
 
-      <dialog id="add_violation_modal" className="modal">
+      <dialog id="add_violation_modal" className="modal" ref={modal}>
         <div className="modal-box max-w-2xl">
           <form method="dialog">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={closeModal}>
+              <X />
+            </button>
           </form>
           <h3 className="font-bold text-lg mb-4">Thêm vi phạm mới</h3>
 
@@ -32,14 +29,14 @@ const AddViolationModal = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Mã sinh viên</span>
+                  <span className="label-text text-xs mb-2">Mã sinh viên</span>
                 </label>
                 <input type="text" placeholder="VD: SE200947" className="input input-bordered w-full" />
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Tên thành viên</span>
+                  <span className="label-text text-xs mb-2">Tên thành viên</span>
                 </label>
                 <input type="text" placeholder="Nhập tên" className="input input-bordered w-full" />
               </div>
@@ -48,7 +45,7 @@ const AddViolationModal = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Loại vi phạm</span>
+                  <span className="label-text text-xs mb-2">Loại vi phạm</span>
                 </label>
                 <select className="select select-bordered w-full">
                   <option value="">Chọn loại vi phạm</option>
@@ -60,7 +57,7 @@ const AddViolationModal = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Số tiền phạt (đ)</span>
+                  <span className="label-text text-xs mb-2">Số tiền phạt (đ)</span>
                 </label>
                 <input type="number" placeholder="20000" className="input input-bordered w-full" min="0" />
               </div>
@@ -68,27 +65,23 @@ const AddViolationModal = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Thời gian vi phạm</span>
+                <span className="label-text text-xs mb-2">Thời gian vi phạm</span>
               </label>
               <input type="datetime-local" className="input input-bordered w-full" />
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Ghi chú</span>
+                <span className="label-text text-xs mb-2">Ghi chú</span>
               </label>
-              <textarea className="textarea textarea-bordered h-24" placeholder="Nhập ghi chú (nếu có)"></textarea>
+              <textarea
+                className="textarea textarea-bordered h-24 w-full"
+                placeholder="Nhập ghi chú (nếu có)"
+              ></textarea>
             </div>
 
             <div className="modal-action">
-              <button
-                type="button"
-                className="btn btn-ghost"
-                onClick={() => {
-                  const modal = document.getElementById('add_violation_modal') as HTMLDialogElement;
-                  modal?.close();
-                }}
-              >
+              <button type="button" className="btn btn-ghost" onClick={closeModal}>
                 Hủy
               </button>
               <button type="submit" className="btn btn-primary">
@@ -98,7 +91,7 @@ const AddViolationModal = () => {
           </form>
         </div>
         <form method="dialog" className="modal-backdrop">
-          <button>close</button>
+          <button onClick={closeModal}>close</button>
         </form>
       </dialog>
     </>
