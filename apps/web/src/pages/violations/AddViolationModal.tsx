@@ -38,7 +38,13 @@ const AddViolationModal = () => {
                 <label className="label">
                   <span className="label-text text-xs mb-2">Tên thành viên</span>
                 </label>
-                <input type="text" placeholder="Nhập tên" className="input input-bordered w-full" />
+                <input
+                  type="text"
+                  placeholder="Tên thành viên"
+                  className="input input-bordered w-full"
+                  value="Phạm Hoàng Tuấn"
+                  disabled
+                />
               </div>
             </div>
 
