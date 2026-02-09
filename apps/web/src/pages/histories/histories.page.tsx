@@ -1,11 +1,11 @@
 import Filters from './Filters';
-import Histories from './Histories';
+import HistoriesTable from './HistoriesTable';
 
 const HistoriesPage = () => {
   return (
     <section className="space-y-4">
       <Filters />
-      <Histories />
+      <HistoriesTable />
     </section>
   );
 };

@@ -1,4 +1,6 @@
-const Histories = () => {
+import Paginate from '../../components/Paginate';
+
+const HistoriesTable = () => {
   const mockData = [
     {
       id: 1,
@@ -171,17 +173,9 @@ const Histories = () => {
       </div>
 
       {/* Pagination */}
-      <div className="p-4 border-t flex justify-between items-center">
-        <div className="text-sm text-gray-500">Hiển thị 1-10 trong tổng số {mockData.length} giao dịch</div>
-        <div className="join">
-          <input className="join-item btn btn-square" type="radio" name="options" aria-label="1" checked="checked" />
-          <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" />
-          <input className="join-item btn btn-square" type="radio" name="options" aria-label="3" />
-          <input className="join-item btn btn-square" type="radio" name="options" aria-label="4" />
-        </div>
-      </div>
+      <Paginate />
     </div>
   );
 };
 
-export default Histories;
+export default HistoriesTable;

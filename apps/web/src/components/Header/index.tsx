@@ -1,4 +1,4 @@
-import { BadgeEuro, House } from 'lucide-react';
+import { BadgeEuro, House, ShieldAlert } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import ActiveHeader from '../../utils/active-header';
 import { NavLink } from './NavLink';
@@ -32,6 +32,15 @@ export const Header = () => {
                 name="Giao dịch"
                 Icon={BadgeEuro}
                 active={ActiveHeader.isActive(location.pathname, '/history-transactions')}
+              />
+            </li>
+
+            <li>
+              <NavLink
+                url="/violations"
+                name="Vi phạm"
+                Icon={ShieldAlert}
+                active={ActiveHeader.isActive(location.pathname, '/violations')}
               />
             </li>
 
