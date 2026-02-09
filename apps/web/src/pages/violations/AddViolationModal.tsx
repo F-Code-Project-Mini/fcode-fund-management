@@ -2,7 +2,7 @@ import { Plus, X } from 'lucide-react';
 import { useRef } from 'react';
 
 const AddViolationModal = () => {
-  const modal = useRef(null);
+  const modal = useRef<HTMLDialogElement | null>(null);
   const openModal = () => {
     modal.current?.showModal();
   };
