@@ -10,6 +10,7 @@ const LoginPage = Loadable(lazy(() => import('~/pages/auth/login/login.page')));
 const ViolationsPage = Loadable(lazy(() => import('~/pages/violations/violations.page')));
 const EventsPage = Loadable(lazy(() => import('~/pages/events/events.page')));
 const MembersPage = Loadable(lazy(() => import('~/pages/members/members.page')));
+const NotFoundPage = Loadable(lazy(() => import('~/pages/notfound/notfound.page')));
 
 export const publicRoutes = [
   {
@@ -22,9 +23,8 @@ export const publicRoutes = [
       { path: 'events', element: <EventsPage /> },
       { path: 'members', element: <MembersPage /> },
       { path: 'login', element: <LoginPage /> },
-      // { path: 'login', element: <LoginPage /> },
-      { path: '404', element: <div>Page Not Found</div> },
-      { path: '*', element: <Navigate to="/404" replace /> },
+      { path: '404', element: <NotFoundPage /> },
+      { path: '*', element: <Navigate to="/404" replace /> }, // luôn nằm ở cúi nhé =))
     ],
   },
 ];
