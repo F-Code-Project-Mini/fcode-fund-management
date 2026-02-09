@@ -9,6 +9,7 @@ const HistoriesPage = Loadable(lazy(() => import('~/pages/histories/histories.pa
 const LoginPage = Loadable(lazy(() => import('~/pages/auth/login/login.page')));
 const ViolationsPage = Loadable(lazy(() => import('~/pages/violations/violations.page')));
 const EventsPage = Loadable(lazy(() => import('~/pages/events/events.page')));
+const MembersPage = Loadable(lazy(() => import('~/pages/members/members.page')));
 
 export const publicRoutes = [
   {
@@ -19,6 +20,7 @@ export const publicRoutes = [
       { path: 'history-transactions', element: <HistoriesPage /> },
       { path: 'violations', element: <ViolationsPage /> },
       { path: 'events', element: <EventsPage /> },
+      { path: 'members', element: <MembersPage /> },
       { path: 'login', element: <LoginPage /> },
       // { path: 'login', element: <LoginPage /> },
       { path: '404', element: <div>Page Not Found</div> },
