@@ -6,7 +6,7 @@ import Loadable from './Loadable';
 
 const HomePage = Loadable(lazy(() => import('~/pages/home/home.page')));
 const HistoriesPage = Loadable(lazy(() => import('~/pages/histories/histories.page')));
-// const LoginPage = Loadable(lazy(() => import('~/pages/auth/login.page')));
+const LoginPage = Loadable(lazy(() => import('~/pages/auth/login/login.page')));
 
 export const publicRoutes = [
   {
@@ -15,6 +15,7 @@ export const publicRoutes = [
     children: [
       { index: true, element: <HomePage /> },
       { path: 'history-transactions', element: <HistoriesPage /> },
+      { path: 'login', element: <LoginPage /> },
       // { path: 'login', element: <LoginPage /> },
       { path: '404', element: <div>Page Not Found</div> },
       { path: '*', element: <Navigate to="/404" replace /> },
