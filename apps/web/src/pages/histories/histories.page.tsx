@@ -5,7 +5,7 @@ import HistoriesTable from './HistoriesTable';
 const HistoriesPage = () => {
   return (
     <section className="space-y-4">
-      <TitlePage title="Quản lý lịch sử" description="Xem và quản lý lịch sử các vi phạm của sinh viên" />
+      <TitlePage title="Lịch sử giao dịch" description="Xem và quản lý lịch sử các vi phạm của sinh viên" />
       <Filters />
       <HistoriesTable />
     </section>
