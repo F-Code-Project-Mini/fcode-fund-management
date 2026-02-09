@@ -80,9 +80,19 @@ const Filters = () => {
             <option value="failed">Thất bại</option>
           </select>
         </div>
+
+        <label className="select">
+          <span className="label">Type</span>
+          <select>
+            <option value="">Tất cả</option>
+            <option value="success">Thành công</option>
+            <option value="pending">Đang xử lý</option>
+            <option value="failed">Thất bại</option>
+          </select>
+        </label>
       </div>
 
-      <div className="flex gap-2 mt-6">
+      <div className="flex gap-2 mt-6 pt-6 border-t-1 ">
         <button className="btn btn-primary">
           <Search size={15} />
           Tìm kiếm
@@ -91,7 +101,7 @@ const Filters = () => {
           <RefreshCcw size={15} />
           Đặt lại
         </button>
-        <button className="btn btn-sort btn-accent">
+        <button className="btn btn-sort btn-accent text-white/90">
           <FileDown size={15} />
           Xuất Excel
         </button>
